@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/noteContentFragmentParent"
+    tools:context=".fragments.SaveOrDeleteFragment">
+    
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbarFragmentNoteContent">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingTop="5dp"
+            android:paddingEnd="5dp"
+            android:paddingBottom="5dp"
+            android:src="@drawable/baseline_arrow_back_24"
+            android:layout_centerVertical="true"
+            android:id="@+id/backButton">
+        </ImageView>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/lastEdited"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/date_rounded"
+            android:ellipsize="end"
+            android:fontFamily="@font/googlesans_regular"
+            android:paddingStart="13dp"
+            android:paddingTop="7dp"
+            android:paddingEnd="13dp"
+            android:paddingBottom="5dp"
+            android:text="Edited On"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold">
+
+
+        </com.google.android.material.textview.MaterialTextView>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/saveNote"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:focusable="true"
+            android:clickable="true"
+            android:paddingBottom="5dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_baseline_save_24"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="15dp"
+            app:tint="@color/black"
+            >
+
+        </ImageView>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomBar"
+        android:layout_below="@+id/toolbarFragmentNoteContent"
+        >
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scrollView"
+            android:fillViewport="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:background="@null"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/etTitle"
+                    android:inputType="none"
+                    android:textSize="22sp"
+                    android:padding="4dp"
+                    android:importantForAutofill="no"
+                    android:fontFamily="@font/googlesans_17pt_medium"
+                    android:hint="Note Title">
+
+                </EditText>
+
+                <com.yahiaangelo.markdownedittext.MarkdownEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginEnd="22dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@null"
+                    android:fontFamily="@font/googlesans_17pt_regular"
+                    android:hint="Note"
+                    android:importantForAutofill="no"
+                    android:inputType="none"
+                    android:padding="10dp"
+                    android:textSize="16sp"
+                    android:id="@+id/etNoteContent">
+
+                </com.yahiaangelo.markdownedittext.MarkdownEditText>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fabColorPicker"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="bottom|right"
+            android:src="@drawable/ic_baseline_color_lens_24"
+            android:tint = "@color/purple"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="20dp"
+            app:background="@color/purple">
+
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/bottomBar"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true">
+
+        <com.yahiaangelo.markdownedittext.MarkdownStylesBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/styleBar"
+            android:layout_margin="5dp"
+            android:elevation="5dp"
+            android:padding="0dp">
+
+        </com.yahiaangelo.markdownedittext.MarkdownStylesBar>
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
