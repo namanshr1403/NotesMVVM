@@ -151,7 +151,7 @@ class NoteFragment : Fragment(R.layout.fragment_note) {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val position=viewHolder.absoluteAdapterPosition
                 val note=rvNotesAdapter.currentList[position]
-                var actionbtntapped=false
+                var actionbtntapped = false
                 noteActivityViewModel.deleteNote(note)
                 noteBinding.search.apply {
                     hideKeyBoard()

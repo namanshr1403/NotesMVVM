@@ -32,9 +32,6 @@ class MainActivity : AppCompatActivity() {
         catch (e:Exception){
             Log.d("TAG",e.toString())
         }
-
-
-
-
     }
+
 }

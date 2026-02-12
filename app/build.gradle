@@ -69,9 +69,7 @@ dependencies {
     implementation ('com.thebluealliance:spectrum:0.7.1') {
         exclude group: 'com.android.support'
     }
-// Markdown EditText
     implementation "io.github.yahiaangelo.markdownedittext:markdownedittext:1.1.3"
-// Markwon (Markdown rendering)
     implementation "io.noties.markwon:core:4.6.0"
     implementation "io.noties.markwon:ext-strikethrough:4.6.0"
     implementation "io.noties.markwon:ext-tasklist:4.6.0"
